@@ -1,0 +1,799 @@
+adpulse-client-onboarding/
+│
+├── README.md
+├── package.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+├── next.config.ts
+├── postcss.config.js
+├── tailwind.config.ts
+├── eslint.config.js
+├── prettier.config.js
+├── middleware.ts
+├── env.example
+├── .gitignore
+├── .editorconfig
+├── components.json
+│
+├── public/
+│   ├── favicon.ico
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   ├── manifest.webmanifest
+│   ├── og/
+│   │   ├── adpulse-og-home.jpg
+│   │   ├── adpulse-og-start-project.jpg
+│   │   ├── adpulse-og-services.jpg
+│   │   └── adpulse-og-portal.jpg
+│   ├── brand/
+│   │   ├── logo-primary.svg
+│   │   ├── logo-secondary.svg
+│   │   ├── logo-mark.svg
+│   │   ├── icon-gold.svg
+│   │   └── wordmark-light.svg
+│   ├── images/
+│   │   ├── hero/
+│   │   │   ├── hero-main.jpg
+│   │   │   ├── hero-overlay.png
+│   │   │   └── pattern-grid.svg
+│   │   ├── clients/
+│   │   │   ├── coastal-properties.svg
+│   │   │   ├── freightlink-africa.svg
+│   │   │   ├── mombasa-medical.svg
+│   │   │   ├── swift-deliveries.svg
+│   │   │   ├── eastafrica-retail.svg
+│   │   │   └── skyline-hotels.svg
+│   │   ├── portfolio/
+│   │   │   ├── haki-na-uwazi.jpg
+│   │   │   ├── kujuana.jpg
+│   │   │   ├── duaaxis-solar.jpg
+│   │   │   ├── premium-trading.jpg
+│   │   │   └── product-management-app.jpg
+│   │   ├── placeholders/
+│   │   │   ├── file-upload-placeholder.svg
+│   │   │   ├── dashboard-empty.svg
+│   │   │   ├── portal-empty.svg
+│   │   │   └── proposal-empty.svg
+│   │   └── icons/
+│   │       ├── service-web.svg
+│   │       ├── service-crm.svg
+│   │       ├── service-automation.svg
+│   │       ├── service-it.svg
+│   │       └── service-marketing.svg
+│   └── docs/
+│       ├── privacy-policy.pdf
+│       ├── terms-of-service.pdf
+│       └── onboarding-guide.pdf
+│
+├── src/
+│   ├── app/
+│   │   ├── (marketing)/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── about/
+│   │   │   │   └── page.tsx
+│   │   │   ├── services/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── website-design/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── web-mobile-development/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── crm-systems/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── business-automation/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── email-automation/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── ict-support/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── digital-marketing/
+│   │   │   │       └── page.tsx
+│   │   │   ├── work/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [slug]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── pricing/
+│   │   │   │   └── page.tsx
+│   │   │   ├── blog/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [slug]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── contact/
+│   │   │   │   └── page.tsx
+│   │   │   ├── privacy-policy/
+│   │   │   │   └── page.tsx
+│   │   │   └── terms-of-service/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── start-project/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── loading.tsx
+│   │   │   ├── error.tsx
+│   │   │   ├── success/
+│   │   │   │   └── page.tsx
+│   │   │   ├── resume/
+│   │   │   │   └── [token]/
+│   │   │   │       └── page.tsx
+│   │   │   └── not-sure/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── portal/
+│   │   │   ├── layout.tsx
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   ├── forgot-password/
+│   │   │   │   └── page.tsx
+│   │   │   ├── invite/
+│   │   │   │   └── [token]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── dashboard/
+│   │   │   │   └── page.tsx
+│   │   │   └── project/
+│   │   │       └── [projectId]/
+│   │   │           ├── page.tsx
+│   │   │           ├── timeline/
+│   │   │           │   └── page.tsx
+│   │   │           ├── files/
+│   │   │           │   └── page.tsx
+│   │   │           ├── feedback/
+│   │   │           │   └── page.tsx
+│   │   │           ├── approvals/
+│   │   │           │   └── page.tsx
+│   │   │           ├── payments/
+│   │   │           │   └── page.tsx
+│   │   │           ├── meetings/
+│   │   │           │   └── page.tsx
+│   │   │           ├── support/
+│   │   │           │   └── page.tsx
+│   │   │           └── settings/
+│   │   │               └── page.tsx
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── layout.tsx
+│   │   │   ├── page.tsx
+│   │   │   ├── login/
+│   │   │   │   └── page.tsx
+│   │   │   ├── leads/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── board/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── [leadId]/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   ├── proposal/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── notes/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── qualification/
+│   │   │   │   │       └── page.tsx
+│   │   │   ├── projects/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── [projectId]/
+│   │   │   │   │   ├── page.tsx
+│   │   │   │   │   ├── timeline/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── files/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── milestones/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── comments/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   ├── support/
+│   │   │   │   │   │   └── page.tsx
+│   │   │   │   │   └── settings/
+│   │   │   │   │       └── page.tsx
+│   │   │   ├── clients/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [clientId]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── payments/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── paystack/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── receipts/
+│   │   │   │       └── page.tsx
+│   │   │   ├── proposals/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── [proposalId]/
+│   │   │   │       └── page.tsx
+│   │   │   ├── support/
+│   │   │   │   ├── page.tsx
+│   │   │   │   └── tickets/
+│   │   │   │       └── [ticketId]/
+│   │   │   │           └── page.tsx
+│   │   │   ├── settings/
+│   │   │   │   ├── page.tsx
+│   │   │   │   ├── services/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── budgets/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── payment-milestones/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── email-templates/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   ├── portal-branding/
+│   │   │   │   │   └── page.tsx
+│   │   │   │   └── team/
+│   │   │   │       └── page.tsx
+│   │   │   └── analytics/
+│   │   │       └── page.tsx
+│   │   │
+│   │   ├── api/
+│   │   │   ├── onboarding/
+│   │   │   │   ├── submit/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── draft/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── resume/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── upload-url/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── validate-budget/
+│   │   │   │       └── route.ts
+│   │   │   ├── leads/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [leadId]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [leadId]/qualify/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [leadId]/convert/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [leadId]/notes/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── [leadId]/proposal/
+│   │   │   │       └── route.ts
+│   │   │   ├── projects/
+│   │   │   │   ├── route.ts
+│   │   │   │   ├── [projectId]/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [projectId]/timeline/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [projectId]/progress/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [projectId]/milestones/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [projectId]/files/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [projectId]/comments/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── [projectId]/support/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── [projectId]/scope-change/
+│   │   │   │       └── route.ts
+│   │   │   ├── clients/
+│   │   │   │   ├── route.ts
+│   │   │   │   └── [clientId]/
+│   │   │   │       └── route.ts
+│   │   │   ├── portal/
+│   │   │   │   ├── invite/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── access/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── approvals/
+│   │   │   │       └── route.ts
+│   │   │   ├── uploads/
+│   │   │   │   ├── signed-url/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── confirm/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── delete/
+│   │   │   │       └── route.ts
+│   │   │   ├── payments/
+│   │   │   │   ├── initialize/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── verify/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── milestone/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── receipts/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── webhook/
+│   │   │   │       └── route.ts
+│   │   │   ├── proposals/
+│   │   │   │   ├── route.ts
+│   │   │   │   └── [proposalId]/
+│   │   │   │       └── route.ts
+│   │   │   ├── support/
+│   │   │   │   ├── tickets/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── tickets/[ticketId]/
+│   │   │   │       └── route.ts
+│   │   │   ├── email/
+│   │   │   │   ├── send-confirmation/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── send-portal-invite/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── send-payment-link/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── send-support-update/
+│   │   │   │       └── route.ts
+│   │   │   ├── webhooks/
+│   │   │   │   ├── paystack/
+│   │   │   │   │   └── route.ts
+│   │   │   │   ├── resend/
+│   │   │   │   │   └── route.ts
+│   │   │   │   └── storage/
+│   │   │   │       └── route.ts
+│   │   │   └── health/
+│   │   │       └── route.ts
+│   │   │
+│   │   ├── not-found.tsx
+│   │   ├── error.tsx
+│   │   ├── loading.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   └── sitemap.ts
+│   │
+│   ├── components/
+│   │   ├── ui/
+│   │   │   ├── button.tsx
+│   │   │   ├── input.tsx
+│   │   │   ├── textarea.tsx
+│   │   │   ├── select.tsx
+│   │   │   ├── checkbox.tsx
+│   │   │   ├── radio-group.tsx
+│   │   │   ├── badge.tsx
+│   │   │   ├── card.tsx
+│   │   │   ├── dialog.tsx
+│   │   │   ├── drawer.tsx
+│   │   │   ├── tabs.tsx
+│   │   │   ├── table.tsx
+│   │   │   ├── tooltip.tsx
+│   │   │   ├── progress.tsx
+│   │   │   ├── calendar.tsx
+│   │   │   ├── avatar.tsx
+│   │   │   ├── breadcrumb.tsx
+│   │   │   ├── dropdown-menu.tsx
+│   │   │   ├── separator.tsx
+│   │   │   ├── skeleton.tsx
+│   │   │   ├── toast.tsx
+│   │   │   ├── pagination.tsx
+│   │   │   └── sheet.tsx
+│   │   │
+│   │   ├── layout/
+│   │   │   ├── site-header.tsx
+│   │   │   ├── site-footer.tsx
+│   │   │   ├── marketing-shell.tsx
+│   │   │   ├── onboarding-shell.tsx
+│   │   │   ├── admin-shell.tsx
+│   │   │   ├── portal-shell.tsx
+│   │   │   ├── sidebar-admin.tsx
+│   │   │   ├── sidebar-portal.tsx
+│   │   │   ├── topbar-admin.tsx
+│   │   │   ├── topbar-portal.tsx
+│   │   │   └── section-container.tsx
+│   │   │
+│   │   ├── marketing/
+│   │   │   ├── hero.tsx
+│   │   │   ├── trusted-by.tsx
+│   │   │   ├── services-grid.tsx
+│   │   │   ├── stats-strip.tsx
+│   │   │   ├── process-section.tsx
+│   │   │   ├── work-showcase.tsx
+│   │   │   ├── pricing-section.tsx
+│   │   │   ├── testimonial-slider.tsx
+│   │   │   ├── faq-section.tsx
+│   │   │   ├── newsletter-form.tsx
+│   │   │   ├── contact-cta.tsx
+│   │   │   ├── article-card.tsx
+│   │   │   └── service-card.tsx
+│   │   │
+│   │   ├── onboarding/
+│   │   │   ├── progress-bar.tsx
+│   │   │   ├── step-layout.tsx
+│   │   │   ├── step-welcome.tsx
+│   │   │   ├── step-service-type.tsx
+│   │   │   ├── step-business-profile.tsx
+│   │   │   ├── step-goals.tsx
+│   │   │   ├── step-feature-scope.tsx
+│   │   │   ├── step-design-assets.tsx
+│   │   │   ├── step-content-submission.tsx
+│   │   │   ├── step-budget.tsx
+│   │   │   ├── step-timeline.tsx
+│   │   │   ├── step-contact-preferences.tsx
+│   │   │   ├── step-process-payment.tsx
+│   │   │   ├── step-review-submit.tsx
+│   │   │   ├── step-not-sure-guided.tsx
+│   │   │   ├── service-selector-card.tsx
+│   │   │   ├── budget-range-card.tsx
+│   │   │   ├── feature-chip.tsx
+│   │   │   ├── file-upload-zone.tsx
+│   │   │   ├── onboarding-save-banner.tsx
+│   │   │   ├── onboarding-exit-dialog.tsx
+│   │   │   ├── onboarding-summary-panel.tsx
+│   │   │   └── onboarding-success-card.tsx
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── lead-table.tsx
+│   │   │   ├── lead-kanban-board.tsx
+│   │   │   ├── lead-score-badge.tsx
+│   │   │   ├── lead-summary-card.tsx
+│   │   │   ├── qualification-panel.tsx
+│   │   │   ├── lead-notes-panel.tsx
+│   │   │   ├── proposal-builder.tsx
+│   │   │   ├── proposal-summary-card.tsx
+│   │   │   ├── project-progress-editor.tsx
+│   │   │   ├── milestone-manager.tsx
+│   │   │   ├── payment-status-card.tsx
+│   │   │   ├── client-profile-card.tsx
+│   │   │   ├── file-asset-manager.tsx
+│   │   │   ├── support-ticket-list.tsx
+│   │   │   ├── dashboard-metrics.tsx
+│   │   │   ├── activity-feed.tsx
+│   │   │   └── internal-note-editor.tsx
+│   │   │
+│   │   ├── portal/
+│   │   │   ├── project-overview-card.tsx
+│   │   │   ├── project-timeline.tsx
+│   │   │   ├── milestone-list.tsx
+│   │   │   ├── payment-card.tsx
+│   │   │   ├── payment-history-table.tsx
+│   │   │   ├── feedback-thread.tsx
+│   │   │   ├── approval-panel.tsx
+│   │   │   ├── file-library.tsx
+│   │   │   ├── support-countdown.tsx
+│   │   │   ├── support-request-form.tsx
+│   │   │   ├── meeting-card.tsx
+│   │   │   ├── portal-status-banner.tsx
+│   │   │   └── scope-change-request.tsx
+│   │   │
+│   │   ├── payments/
+│   │   │   ├── paystack-button.tsx
+│   │   │   ├── payment-milestone-card.tsx
+│   │   │   ├── receipt-card.tsx
+│   │   │   ├── invoice-summary.tsx
+│   │   │   └── payment-status-pill.tsx
+│   │   │
+│   │   ├── emails/
+│   │   │   ├── onboarding-confirmation-email.tsx
+│   │   │   ├── proposal-email.tsx
+│   │   │   ├── portal-invite-email.tsx
+│   │   │   ├── payment-link-email.tsx
+│   │   │   ├── support-update-email.tsx
+│   │   │   └── base-email-layout.tsx
+│   │   │
+│   │   └── shared/
+│   │       ├── empty-state.tsx
+│   │       ├── status-badge.tsx
+│   │       ├── page-header.tsx
+│   │       ├── info-alert.tsx
+│   │       ├── warning-alert.tsx
+│   │       ├── success-alert.tsx
+│   │       ├── data-pill.tsx
+│   │       ├── file-chip.tsx
+│   │       ├── user-avatar-group.tsx
+│   │       └── copy-to-clipboard.tsx
+│   │
+│   ├── config/
+│   │   ├── site.ts
+│   │   ├── navigation.ts
+│   │   ├── services.ts
+│   │   ├── pricing.ts
+│   │   ├── budgets.ts
+│   │   ├── timelines.ts
+│   │   ├── milestone-payments.ts
+│   │   ├── lead-statuses.ts
+│   │   ├── project-phases.ts
+│   │   ├── payment-statuses.ts
+│   │   ├── support-statuses.ts
+│   │   ├── upload-limits.ts
+│   │   └── feature-options.ts
+│   │
+│   ├── constants/
+│   │   ├── colors.ts
+│   │   ├── typography.ts
+│   │   ├── countries.ts
+│   │   ├── industries.ts
+│   │   ├── contact-methods.ts
+│   │   ├── decision-roles.ts
+│   │   ├── file-types.ts
+│   │   ├── regex.ts
+│   │   └── app-copy.ts
+│   │
+│   ├── hooks/
+│   │   ├── use-onboarding-form.ts
+│   │   ├── use-onboarding-save.ts
+│   │   ├── use-onboarding-validation.ts
+│   │   ├── use-file-upload.ts
+│   │   ├── use-paystack.ts
+│   │   ├── use-project-progress.ts
+│   │   ├── use-portal-access.ts
+│   │   ├── use-admin-filters.ts
+│   │   ├── use-query-params.ts
+│   │   └── use-toast.ts
+│   │
+│   ├── store/
+│   │   ├── onboarding-store.ts
+│   │   ├── admin-store.ts
+│   │   ├── portal-store.ts
+│   │   └── ui-store.ts
+│   │
+│   ├── lib/
+│   │   ├── auth/
+│   │   │   ├── auth.ts
+│   │   │   ├── session.ts
+│   │   │   ├── roles.ts
+│   │   │   ├── guards.ts
+│   │   │   └── permissions.ts
+│   │   │
+│   │   ├── db/
+│   │   │   ├── prisma.ts
+│   │   │   ├── queries/
+│   │   │   │   ├── leads.ts
+│   │   │   │   ├── clients.ts
+│   │   │   │   ├── projects.ts
+│   │   │   │   ├── milestones.ts
+│   │   │   │   ├── payments.ts
+│   │   │   │   ├── proposals.ts
+│   │   │   │   ├── files.ts
+│   │   │   │   ├── comments.ts
+│   │   │   │   ├── support.ts
+│   │   │   │   └── activity.ts
+│   │   │   └── transactions/
+│   │   │       ├── convert-lead-to-project.ts
+│   │   │       ├── create-payment-milestones.ts
+│   │   │       ├── confirm-payment.ts
+│   │   │       └── launch-project.ts
+│   │   │
+│   │   ├── validations/
+│   │   │   ├── onboarding.schema.ts
+│   │   │   ├── business-profile.schema.ts
+│   │   │   ├── goals.schema.ts
+│   │   │   ├── feature-scope.schema.ts
+│   │   │   ├── design-assets.schema.ts
+│   │   │   ├── content.schema.ts
+│   │   │   ├── budget.schema.ts
+│   │   │   ├── timeline.schema.ts
+│   │   │   ├── contact.schema.ts
+│   │   │   ├── proposal.schema.ts
+│   │   │   ├── milestone.schema.ts
+│   │   │   ├── payment.schema.ts
+│   │   │   └── support-ticket.schema.ts
+│   │   │
+│   │   ├── payments/
+│   │   │   ├── paystack.ts
+│   │   │   ├── initialize-payment.ts
+│   │   │   ├── verify-payment.ts
+│   │   │   ├── payment-milestone-engine.ts
+│   │   │   ├── payment-amounts.ts
+│   │   │   ├── payment-receipt.ts
+│   │   │   └── webhook-handler.ts
+│   │   │
+│   │   ├── storage/
+│   │   │   ├── s3.ts
+│   │   │   ├── cloudinary.ts
+│   │   │   ├── signed-upload-url.ts
+│   │   │   ├── file-categories.ts
+│   │   │   ├── file-metadata.ts
+│   │   │   └── delete-file.ts
+│   │   │
+│   │   ├── email/
+│   │   │   ├── resend.ts
+│   │   │   ├── templates.ts
+│   │   │   ├── send-onboarding-confirmation.ts
+│   │   │   ├── send-portal-invite.ts
+│   │   │   ├── send-payment-link.ts
+│   │   │   ├── send-proposal.ts
+│   │   │   ├── send-support-update.ts
+│   │   │   └── send-admin-alert.ts
+│   │   │
+│   │   ├── scoring/
+│   │   │   ├── lead-score.ts
+│   │   │   ├── budget-fit.ts
+│   │   │   ├── completeness-score.ts
+│   │   │   └── urgency-priority.ts
+│   │   │
+│   │   ├── onboarding/
+│   │   │   ├── initial-state.ts
+│   │   │   ├── step-order.ts
+│   │   │   ├── conditional-routing.ts
+│   │   │   ├── form-normalizer.ts
+│   │   │   ├── form-persistence.ts
+│   │   │   ├── onboarding-transformer.ts
+│   │   │   ├── recommendation-engine.ts
+│   │   │   └── completion-check.ts
+│   │   │
+│   │   ├── proposals/
+│   │   │   ├── proposal-generator.ts
+│   │   │   ├── proposal-pricing.ts
+│   │   │   ├── proposal-timeline.ts
+│   │   │   ├── proposal-scope.ts
+│   │   │   └── proposal-versioning.ts
+│   │   │
+│   │   ├── portal/
+│   │   │   ├── portal-access.ts
+│   │   │   ├── portal-progress.ts
+│   │   │   ├── approval-workflow.ts
+│   │   │   ├── feedback-threading.ts
+│   │   │   ├── support-window.ts
+│   │   │   └── scope-change.ts
+│   │   │
+│   │   ├── analytics/
+│   │   │   ├── posthog.ts
+│   │   │   ├── events.ts
+│   │   │   ├── onboarding-analytics.ts
+│   │   │   ├── lead-funnel.ts
+│   │   │   └── revenue-metrics.ts
+│   │   │
+│   │   ├── monitoring/
+│   │   │   ├── sentry.ts
+│   │   │   ├── logger.ts
+│   │   │   └── audit-log.ts
+│   │   │
+│   │   ├── utils/
+│   │   │   ├── cn.ts
+│   │   │   ├── format-currency.ts
+│   │   │   ├── format-date.ts
+│   │   │   ├── format-phone.ts
+│   │   │   ├── slugify.ts
+│   │   │   ├── sanitize-html.ts
+│   │   │   ├── parse-budget.ts
+│   │   │   ├── validate-file.ts
+│   │   │   ├── deep-merge.ts
+│   │   │   └── generate-id.ts
+│   │   │
+│   │   └── types/
+│   │       ├── auth.ts
+│   │       ├── onboarding.ts
+│   │       ├── lead.ts
+│   │       ├── client.ts
+│   │       ├── project.ts
+│   │       ├── milestone.ts
+│   │       ├── payment.ts
+│   │       ├── proposal.ts
+│   │       ├── file-asset.ts
+│   │       ├── comment.ts
+│   │       ├── support.ts
+│   │       ├── analytics.ts
+│   │       └── api.ts
+│   │
+│   ├── data/
+│   │   ├── mock/
+│   │   │   ├── leads.json
+│   │   │   ├── projects.json
+│   │   │   ├── clients.json
+│   │   │   ├── milestones.json
+│   │   │   ├── payments.json
+│   │   │   ├── testimonials.json
+│   │   │   ├── faq.json
+│   │   │   └── blog-posts.json
+│   │   └── seed/
+│   │       ├── services.ts
+│   │       ├── budgets.ts
+│   │       ├── timeline-options.ts
+│   │       ├── industries.ts
+│   │       └── roles.ts
+│   │
+│   └── styles/
+│       ├── tokens.css
+│       ├── theme.css
+│       ├── utilities.css
+│       ├── onboarding.css
+│       ├── admin.css
+│       ├── portal.css
+│       └── animations.css
+│
+├── prisma/
+│   ├── schema.prisma
+│   ├── seed.ts
+│   ├── migrations/
+│   │   └── .gitkeep
+│   └── seeds/
+│       ├── services.seed.ts
+│       ├── pricing.seed.ts
+│       ├── users.seed.ts
+│       └── settings.seed.ts
+│
+├── docs/
+│   ├── architecture/
+│   │   ├── system-overview.md
+│   │   ├── app-routes.md
+│   │   ├── module-boundaries.md
+│   │   ├── security-model.md
+│   │   ├── payment-flow.md
+│   │   ├── onboarding-flow.md
+│   │   ├── admin-workflow.md
+│   │   ├── portal-workflow.md
+│   │   └── deployment-architecture.md
+│   ├── product/
+│   │   ├── product-requirements.md
+│   │   ├── onboarding-copy-guide.md
+│   │   ├── service-logic.md
+│   │   ├── lead-qualification-rules.md
+│   │   ├── proposal-rules.md
+│   │   ├── support-policy.md
+│   │   └── revision-policy.md
+│   ├── design/
+│   │   ├── design-system.md
+│   │   ├── color-palette.md
+│   │   ├── typography.md
+│   │   ├── component-states.md
+│   │   ├── onboarding-wireframes.md
+│   │   ├── admin-wireframes.md
+│   │   └── portal-wireframes.md
+│   ├── api/
+│   │   ├── endpoints.md
+│   │   ├── auth.md
+│   │   ├── onboarding.md
+│   │   ├── projects.md
+│   │   ├── payments.md
+│   │   ├── uploads.md
+│   │   └── webhooks.md
+│   └── operations/
+│       ├── environment-variables.md
+│       ├── incident-response.md
+│       ├── release-checklist.md
+│       ├── qa-checklist.md
+│       ├── client-handoff-checklist.md
+│       └── support-workflow.md
+│
+├── tests/
+│   ├── unit/
+│   │   ├── validations/
+│   │   │   ├── onboarding.schema.test.ts
+│   │   │   ├── budget.schema.test.ts
+│   │   │   └── contact.schema.test.ts
+│   │   ├── scoring/
+│   │   │   ├── lead-score.test.ts
+│   │   │   └── completeness-score.test.ts
+│   │   ├── payments/
+│   │   │   ├── payment-amounts.test.ts
+│   │   │   └── payment-milestone-engine.test.ts
+│   │   └── utils/
+│   │       ├── format-currency.test.ts
+│   │       └── format-phone.test.ts
+│   ├── integration/
+│   │   ├── onboarding-submit.test.ts
+│   │   ├── lead-conversion.test.ts
+│   │   ├── portal-access.test.ts
+│   │   ├── paystack-webhook.test.ts
+│   │   └── support-ticket.test.ts
+│   ├── e2e/
+│   │   ├── onboarding-flow.spec.ts
+│   │   ├── admin-qualification.spec.ts
+│   │   ├── client-portal-payment.spec.ts
+│   │   └── support-request.spec.ts
+│   ├── fixtures/
+│   │   ├── onboarding.json
+│   │   ├── project.json
+│   │   └── payment.json
+│   └── setup/
+│       ├── test-env.ts
+│       ├── setup-tests.ts
+│       └── mock-server.ts
+│
+├── scripts/
+│   ├── seed.ts
+│   ├── create-admin.ts
+│   ├── sync-services.ts
+│   ├── generate-sitemap.ts
+│   ├── clean-uploads.ts
+│   ├── recalculate-lead-scores.ts
+│   └── expire-support-windows.ts
+│
+├── emails/
+│   ├── templates/
+│   │   ├── onboarding-confirmation.html
+│   │   ├── portal-invite.html
+│   │   ├── proposal-sent.html
+│   │   ├── payment-link.html
+│   │   ├── support-update.html
+│   │   └── admin-alert.html
+│   └── previews/
+│       ├── onboarding-confirmation.preview.tsx
+│       ├── portal-invite.preview.tsx
+│       ├── proposal-sent.preview.tsx
+│       ├── payment-link.preview.tsx
+│       └── support-update.preview.tsx
+│
+└── .github/
+    ├── workflows/
+    │   ├── lint.yml
+    │   ├── test.yml
+    │   ├── build.yml
+    │   └── deploy.yml
+    ├── ISSUE_TEMPLATE/
+    │   ├── bug_report.md
+    │   ├── feature_request.md
+    │   └── support-task.md
+    └── pull_request_template.md
