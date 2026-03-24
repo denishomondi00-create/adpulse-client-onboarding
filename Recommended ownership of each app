@@ -1,0 +1,104 @@
+apps/site
+
+Handles:
+
+marketing website
+public service pages
+pricing
+case studies
+onboarding flow
+fast-track mode
+success page
+auth entry
+apps/admin
+
+Handles:
+
+lead review
+proposal creation
+project conversion
+payment tracking
+support management
+team settings
+tenant/workspace settings
+apps/portal
+
+Handles:
+
+client login
+project overview
+progress visibility
+file center
+comments
+approvals
+milestone payments
+support window
+apps/api
+
+Handles:
+
+business logic
+database access
+auth
+lead scoring
+proposal generation
+project lifecycle
+payments
+file rules
+notifications
+webhooks
+apps/worker
+
+Handles:
+
+background jobs
+reminders
+payment follow-ups
+lead scoring jobs
+proposal jobs
+scheduled maintenance
+Most important product decision reflected in this structure
+
+This structure is built as a multi-tenant product, not a one-company internal tool.
+
+That is why it includes:
+
+workspaces
+configurable service templates
+configurable milestones
+configurable lead scoring
+branded admin settings
+branded client portal capability
+reusable proposal engine
+reusable workflow package
+What is intentionally included because you want to sell it later
+
+These are the folders many people forget, and they are the ones that make it product-grade:
+
+packages/proposal-engine
+packages/lead-scoring
+packages/workflow
+packages/billing
+packages/storage
+docs/architecture
+docs/operations
+apps/worker
+apps/admin/templates
+apps/admin/settings/roles-permissions
+apps/portal/[projectId]/scope-change
+
+That is what moves this from “agency software” to “sellable SaaS asset.”
+
+Strong recommendation
+
+For your case, this is the right starting architecture:
+
+pnpm monorepo
+Turbo
+Next.js apps for frontend surfaces
+NestJS API
+PostgreSQL + Prisma
+Redis worker layer
+Paystack first
+S3-compatible uploads
+Resend email layer
